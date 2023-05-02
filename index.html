@@ -5,6 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Analitics</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-PXK292YVGP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-PXK292YVGP");
+    </script>
   </head>
   <body>
     <form id="consultation-form">
@@ -25,5 +39,15 @@
         </div>
       </div>
     </form>
+    <script>
+      document
+        .getElementById("consultation-form")
+        .addEventListener("submit", function () {
+          gtag("event", "sign_up", {
+            event_category: "form",
+            event_label: "Sign Up Form Submitted",
+          });
+        });    
+    </script>
   </body>
 </html>
